@@ -8,6 +8,7 @@ npm-debug.log*
 .DS_Store
 *.swp
 yarn-error.log
+yarn.lock
 
 node_modules
 build
