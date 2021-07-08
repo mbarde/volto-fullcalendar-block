@@ -12,5 +12,9 @@
   ],
   "scripts": {
     "i18n": "NODE_ENV=production node src/i18n.js"
+  },
+  "dependencies": {
+    "@fullcalendar/daygrid": "5.8.0",
+    "@fullcalendar/react": "5.8.0"
   }
 }

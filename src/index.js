@@ -1,10 +1,11 @@
+import calendarSVG from '@plone/volto/icons/calendar.svg';
 import { FullCalendarBlockView, FullCalendarBlockEdit } from './components';
 
 const applyConfig = (config) => {
   config.blocks.blocksConfig.fullcalendar = {
     id: 'fullcalendar',
     title: 'FullCalendar',
-    icon: accordionSVG,
+    icon: calendarSVG,
     group: 'common',
     view: FullCalendarBlockView,
     edit: FullCalendarBlockEdit,
