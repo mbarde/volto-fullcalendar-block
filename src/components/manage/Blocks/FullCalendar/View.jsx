@@ -18,8 +18,19 @@ const FullCalendarBlockView = (props) => {
     setIsClientSide(true);
   }, []);
 
+  /* https://stackoverflow.com/a/43467144 */
+  function isValidURL(string) {
+    let url;
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
+
   const { data } = props;
-  const events = data.calendar_url ? {
+  const events = (data.calendar_url && isValidURL(data.calendar_url)) ? {
     url: data.calendar_url,
     format: 'ics'
   } : {};
