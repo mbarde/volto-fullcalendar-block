@@ -8,6 +8,10 @@ const messages = defineMessages({
   labelCalendarURL: {
     id: 'Calendar URL',
     defaultMessage: 'Calendar URL',
+  },
+  descriptionCalendarURL: {
+    id: 'Must point to an iCal/ics file.',
+    defaultMessage: 'Must point to an iCal/ics file.'
   }
 });
 
@@ -28,6 +32,7 @@ const FullCalendarBlockSchema = (intl) => {
     properties: {
       calendar_url: {
         title: intl.formatMessage(messages.labelCalendarURL),
+        description: intl.formatMessage(messages.descriptionCalendarURL),
         type: 'string',
       }
     },

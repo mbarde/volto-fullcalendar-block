@@ -1,0 +1,7 @@
+.fc-loader-wrapper .ui.loader {
+  display: block;
+}
+
+.fc-loader-wrapper.hidden {
+  display: none;
+}
