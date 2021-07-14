@@ -1,6 +1,8 @@
 # volto-fullcalendar-block
 
-Block for [Volto](https://github.com/plone/volto) to display events from an iCal file in a [FullCalendar](https://fullcalendar.io/).
+Block for [Volto](https://github.com/plone/volto) to display events from an iCal/ics file in a [FullCalendar](https://fullcalendar.io/).
+
+![Demo](https://raw.githubusercontent.com/mbarde/volto-fullcalendar-block/docs/docs/demo.gif)
 
 ## Features
 
