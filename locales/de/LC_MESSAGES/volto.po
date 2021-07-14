@@ -18,3 +18,7 @@ msgstr "Kalender Einstellungen"
 #: components/manage/Blocks/FullCalendar/schema
 msgid "Calendar URL"
 msgstr "Kalender URL"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "Must point to an iCal/ics file."
+msgstr "Muss auf eine iCal/ics-Datei zeigen."
