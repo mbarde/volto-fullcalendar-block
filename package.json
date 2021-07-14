@@ -1,6 +1,7 @@
 {
-  "name": "@uniko/volto-fullcalendar-block",
-  "version": "0.2.0",
+  "name": "@mbarde/volto-fullcalendar-block",
+  "version": "0.2.1",
+  "author": "Matthias Barde",
   "description": "volto-fullcalendar-block: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
@@ -10,6 +11,10 @@
     "plone",
     "react"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mbarde/volto-fullcalendar-block.git"
+  },
   "scripts": {
     "i18n": "NODE_ENV=production node src/i18n.js",
     "cypress:run": "./node_modules/cypress/bin/cypress run",
