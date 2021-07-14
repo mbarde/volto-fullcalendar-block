@@ -11,11 +11,16 @@
     "react"
   ],
   "scripts": {
-    "i18n": "NODE_ENV=production node src/i18n.js"
+    "i18n": "NODE_ENV=production node src/i18n.js",
+    "cypress:run": "./node_modules/cypress/bin/cypress run",
+    "cypress:open": "./node_modules/cypress/bin/cypress open"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "5.8.0",
     "@fullcalendar/icalendar": "5.8.0",
     "@fullcalendar/react": "5.8.0"
+  },
+  "devDependencies": {
+    "cypress": "7.7.0"
   }
 }
