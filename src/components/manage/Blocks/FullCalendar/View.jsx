@@ -43,6 +43,9 @@ const FullCalendarBlockView = (props) => {
      (btw we let FullCalendar do the loading since it handles CORS quite well)
   */
   const [storedEvents, setStoredEvents] = useState(null);
+  useEffect(() => {
+    setStoredEvents(null)
+  }, [data.calendar_url]);
 
   /* since FullCalendar fires the `loading` callback multiple times
      we need to introduce this flag to avoid prematurely switching to `storedEvents`:
@@ -80,7 +83,7 @@ const FullCalendarBlockView = (props) => {
             />
           </>
         )}
-        {storedEvents != null && (
+        {storedEvents !== null && (
           <FullCalendar
             ref={calendarRef}
             plugins={[dayGridPlugin, iCalendarPlugin]}
