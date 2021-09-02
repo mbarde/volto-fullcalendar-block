@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import listPlugin from '@fullcalendar/list';
+import timeGridPlugin from '@fullcalendar/timegrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import './fullcalendar.css';
 
@@ -44,7 +46,7 @@ const FullCalendarBlockView = (props) => {
   */
   const [storedEvents, setStoredEvents] = useState(null);
   useEffect(() => {
-    setStoredEvents(null)
+    setStoredEvents(null);
   }, [data.calendar_url]);
 
   /* since FullCalendar fires the `loading` callback multiple times
@@ -66,6 +68,25 @@ const FullCalendarBlockView = (props) => {
     }
   };
 
+  const fcOptions = {
+    plugins: [
+      dayGridPlugin,
+      iCalendarPlugin,
+      listPlugin,
+      timeGridPlugin,
+    ],
+    buttonText: {
+      listWeek: 'List week',
+      listMonth: 'List month'
+    },
+    headerToolbar: {
+      left: 'dayGridMonth,timeGridWeek,timeGridDay',
+      center: 'listWeek,listMonth',
+      right: 'prev,next today',
+    },
+    initialView: 'dayGridMonth'
+  };
+
   return (
     isClientSide && (
       <div class="calendar-wrapper">
@@ -76,19 +97,17 @@ const FullCalendarBlockView = (props) => {
             </Dimmer>
             <FullCalendar
               ref={calendarRef}
-              plugins={[dayGridPlugin, iCalendarPlugin]}
-              initialView="dayGridMonth"
               events={remoteEvents}
               loading={(isLoading) => onLoading(isLoading)}
+              {...fcOptions}
             />
           </>
         )}
         {storedEvents !== null && (
           <FullCalendar
             ref={calendarRef}
-            plugins={[dayGridPlugin, iCalendarPlugin]}
-            initialView="dayGridMonth"
             events={storedEvents}
+            {...fcOptions}
           />
         )}
       </div>

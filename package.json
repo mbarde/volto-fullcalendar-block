@@ -21,9 +21,11 @@
     "cypress:open": "./node_modules/cypress/bin/cypress open"
   },
   "dependencies": {
-    "@fullcalendar/daygrid": "5.8.0",
-    "@fullcalendar/icalendar": "5.8.0",
-    "@fullcalendar/react": "5.8.0"
+    "@fullcalendar/daygrid": "5.9.0",
+    "@fullcalendar/timegrid": "5.9.0",
+    "@fullcalendar/list": "5.9.0",
+    "@fullcalendar/icalendar": "5.9.0",
+    "@fullcalendar/react": "5.9.0"
   },
   "devDependencies": {
     "cypress": "7.7.0"
