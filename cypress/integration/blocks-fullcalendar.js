@@ -24,7 +24,7 @@ describe('Blocks Tests', () => {
     cy.get('.ui.basic.icon.button.fullcalendar').contains('FullCalendar').click();
     cy.get('.fc-today-button').contains('today');
 
-    cy.get('.fc-loader-wrapper .ui.loader').should('not.be.visible');
+    cy.get('.calendar-wrapper .ui.loader').should('not.exist');
     cy.get('.fc-daygrid-event-harness').should('not.exist');
 
     // Save
@@ -36,7 +36,7 @@ describe('Blocks Tests', () => {
     cy.get('.fc-today-button').contains('today');
 
     // No events should be loaded
-    cy.get('.fc-loader-wrapper .ui.loader').should('not.be.visible');
+    cy.get('.calendar-wrapper .ui.loader').should('not.exist');
     cy.get('.fc-daygrid-event-harness').should('not.exist');
   });
 
@@ -63,8 +63,8 @@ describe('Blocks Tests', () => {
 
     // Add URL
     cy.get('#field-calendar_url').type('https://events.uni-koblenz.de');
-    cy.get('.fc-loader-wrapper .ui.loader').should('be.visible');
-    cy.get('.fc-loader-wrapper .ui.loader').should('not.be.visible');
+    cy.get('.calendar-wrapper .ui.loader').should('be.visible');
+    cy.get('.calendar-wrapper .ui.loader').should('not.exist');
     cy.get('.fc-daygrid-event-harness').should('not.be.empty');
 
     // Save
@@ -73,11 +73,12 @@ describe('Blocks Tests', () => {
 
     // Then the page view should contain our changes
     cy.contains(pageTitle);
+
+    cy.get('.calendar-wrapper .ui.loader').should('be.visible');
     cy.get('.fc-today-button').contains('today');
 
     // Wait until events are loaded
-    // minor bug: loader is not visible after page is saved
-    cy.get('.fc-loader-wrapper .ui.loader').should('not.be.visible');
+    cy.get('.calendar-wrapper .ui.loader').should('not.exist');
     cy.get('.fc-daygrid-event-harness').should('not.be.empty');
   });
 
