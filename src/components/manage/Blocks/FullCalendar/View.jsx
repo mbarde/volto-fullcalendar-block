@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import FullCalendar from '@fullcalendar/react';
-import { Loader } from 'semantic-ui-react';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import './fullcalendar.css';
@@ -56,12 +55,12 @@ const FullCalendarBlockView = (props) => {
 
   return (
     isClientSide && (
-      <>
+      <div class="calendar-wrapper">
         {storedEvents.length === 0 && (
           <>
-            <div className="fc-loader-wrapper">
-              <Loader size="massive" />
-            </div>
+            <Dimmer active inverted>
+              <Loader inverted size="massive" />
+            </Dimmer>
             <FullCalendar
               ref={calendarRef}
               plugins={[dayGridPlugin, iCalendarPlugin]}
@@ -79,7 +78,7 @@ const FullCalendarBlockView = (props) => {
             events={storedEvents}
           />
         )}
-      </>
+      </div>
     )
   );
 };
