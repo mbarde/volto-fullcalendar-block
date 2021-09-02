@@ -40,23 +40,33 @@ const FullCalendarBlockView = (props) => {
 
   /* store events in component state after FullCalendar retrieved them initially,
      otherwise FullCalendar would reload them on every re-render of this component
+     (btw we let FullCalendar do the loading since it handles CORS quite well)
   */
-  const [storedEvents, setStoredEvents] = useState([]);
+  const [storedEvents, setStoredEvents] = useState(null);
+
+  /* since FullCalendar fires the `loading` callback multiple times
+     we need to introduce this flag to avoid prematurely switching to `storedEvents`:
+  */
+  var isFullCalendarLoading = false;
+
   const onLoading = (isLoading) => {
     if (isLoading === false) {
+      isFullCalendarLoading = false;
       setTimeout(() => {
-        let events = calendarRef.current.getApi().getEvents();
-        if (events.length > 0) {
+        if (!isFullCalendarLoading && calendarRef.current) {
+          let events = calendarRef.current.getApi().getEvents();
           setStoredEvents(events);
         }
       });
+    } else {
+      isFullCalendarLoading = true;
     }
   };
 
   return (
     isClientSide && (
       <div class="calendar-wrapper">
-        {storedEvents.length === 0 && (
+        {storedEvents === null && (
           <>
             <Dimmer active inverted>
               <Loader inverted size="massive" />
@@ -70,7 +80,7 @@ const FullCalendarBlockView = (props) => {
             />
           </>
         )}
-        {storedEvents.length > 0 && (
+        {storedEvents != null && (
           <FullCalendar
             ref={calendarRef}
             plugins={[dayGridPlugin, iCalendarPlugin]}
