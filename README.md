@@ -10,7 +10,7 @@ Specifiy an URL to an .ics/.iCal file. Contained events are displayed in the cal
 
 ## Setup
 
-### Add volto-accordion-block to your Volto project
+### Add volto-fullcalendar-block to your Volto project
 
 1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
 
