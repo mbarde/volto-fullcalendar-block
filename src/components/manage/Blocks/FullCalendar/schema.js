@@ -11,8 +11,8 @@ const messages = defineMessages({
   },
   descriptionCalendarURL: {
     id: 'Must point to an iCal/ics file.',
-    defaultMessage: 'Must point to an iCal/ics file.'
-  }
+    defaultMessage: 'Must point to an iCal/ics file.',
+  },
 });
 
 const FullCalendarBlockSchema = (intl) => {
@@ -23,9 +23,7 @@ const FullCalendarBlockSchema = (intl) => {
       {
         id: 'default',
         title: 'Default',
-        fields: [
-          'calendar_url'
-        ],
+        fields: ['calendar_url'],
       },
     ],
 
@@ -34,10 +32,10 @@ const FullCalendarBlockSchema = (intl) => {
         title: intl.formatMessage(messages.labelCalendarURL),
         description: intl.formatMessage(messages.descriptionCalendarURL),
         type: 'string',
-      }
+      },
     },
 
-    required: []
+    required: [],
   };
 };
 

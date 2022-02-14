@@ -5,7 +5,6 @@ import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import FullCalendarBlockView from './View';
 import FullCalendarBlockSchema from './schema';
 
-
 const FullCalendarBlockEdit = (props) => {
   const schema = FullCalendarBlockSchema(props.intl);
   return (
@@ -26,8 +25,7 @@ const FullCalendarBlockEdit = (props) => {
       </SidebarPortal>
       <FullCalendarBlockView data={props.data} />
     </>
-  )
+  );
 };
 
 export default FullCalendarBlockEdit;
-
