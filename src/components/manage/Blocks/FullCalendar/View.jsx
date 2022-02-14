@@ -87,7 +87,7 @@ const FullCalendarBlockView = (props) => {
 
   return (
     isClientSide && (
-      <div class="calendar-wrapper">
+      <div className="calendar-wrapper">
         {storedEvents === null && (
           <>
             <Dimmer active inverted>
