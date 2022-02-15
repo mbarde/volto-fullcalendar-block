@@ -90,8 +90,7 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
       end.getMinutes() === 59
     ) {
       /* full day event */
-      event.start = event.start.slice(0, 10);
-      delete event.end;
+      event.allDay = true;
     }
     if (
       /* open end event */
