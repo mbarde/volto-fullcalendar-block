@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import listPlugin from '@fullcalendar/list';
+import timeGridPlugin from '@fullcalendar/timegrid';
 import allLocales from '@fullcalendar/core/locales-all';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
@@ -22,15 +24,18 @@ const expand = (item) => {
   return rrule.all().map((date) => {
     /* rrule.all() only gives us dates, so we add time part of
        our original event: item.start (`2022-03-01T09:00:00+00:00`) */
-    let startStr = `${date.getFullYear()}-${(date.getMonth() + 1)
+    let dateStr = `${date.getFullYear()}-${(date.getMonth() + 1)
       .toString()
       .padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-    startStr = startStr + item.start.slice(10);
+    let startStr = dateStr + item.start.slice(10);
+    let endStr = dateStr + item.end.slice(10);
     /* and return full object for FullCalendar */
     return {
       title: item.title,
       start: startStr,
+      end: endStr,
       url: flattenToAppURL(item['@id']),
+      groupId: item['@id'],
     };
   });
 };
@@ -53,6 +58,17 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
 
   let recurrences = [];
 
+  const isFullDayEvent = (event) => {
+    let start = new Date(event.start);
+    let end = new Date(event.end);
+    return (
+      start.getHours() === 0 &&
+      start.getMinutes() === 0 &&
+      end.getHours() === 23 &&
+      end.getMinutes() === 59
+    );
+  };
+
   let events = items
     .filter((i) => {
       if (i['@type'] !== 'Event') return false;
@@ -74,8 +90,26 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
 
   events = events.concat(recurrences);
 
+  events = events.map((event) => {
+    console.log(event);
+    if (isFullDayEvent(event)) {
+      event.start = event.start.slice(0, 10);
+      delete event.end;
+    }
+    return event;
+  });
+
   const fcOptions = {
-    plugins: [dayGridPlugin],
+    plugins: [dayGridPlugin, listPlugin, timeGridPlugin],
+    buttonText: {
+      listWeek: 'List week',
+      listMonth: 'List month',
+    },
+    headerToolbar: {
+      left: 'dayGridMonth,timeGridWeek,timeGridDay',
+      center: 'listWeek,listMonth',
+      right: 'prev,next today',
+    },
     initialView: 'dayGridMonth',
     locales: allLocales,
     locale: intl.locale ?? 'en',
