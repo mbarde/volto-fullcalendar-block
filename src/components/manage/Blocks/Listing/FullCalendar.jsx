@@ -8,6 +8,7 @@ import allLocales from '@fullcalendar/core/locales-all';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { RRule, rrulestr } from 'rrule';
+import messages from '../FullCalendar/messages';
 
 /* returns all events, computed by the reccurence rule of an Event item */
 const expand = (item) => {
@@ -91,7 +92,6 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
   events = events.concat(recurrences);
 
   events = events.map((event) => {
-    console.log(event);
     if (isFullDayEvent(event)) {
       event.start = event.start.slice(0, 10);
       delete event.end;
@@ -102,8 +102,13 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
   const fcOptions = {
     plugins: [dayGridPlugin, listPlugin, timeGridPlugin],
     buttonText: {
-      listWeek: 'List week',
-      listMonth: 'List month',
+      dayGridMonth: intl.formatMessage(messages.labelDayGridMonth),
+      timeGridWeek: intl.formatMessage(messages.labelTimeGridWeek),
+      timeGridDay: intl.formatMessage(messages.labelTimeGridDay),
+      listDay: intl.formatMessage(messages.labelListDay),
+      listWeek: intl.formatMessage(messages.labelListWeek),
+      listMonth: intl.formatMessage(messages.labelListMonth),
+      today: intl.formatMessage(messages.labelToday),
     },
     headerToolbar: {
       left: 'dayGridMonth,timeGridWeek,timeGridDay',
