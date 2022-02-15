@@ -1,19 +1,18 @@
-import { defineMessages } from 'react-intl';
+import messages from './messages.js';
 
-const messages = defineMessages({
-  labelCalendarSettings: {
-    id: 'Calendar Settings',
-    defaultMessage: 'Calendar Settings',
-  },
-  labelCalendarURL: {
-    id: 'Calendar URL',
-    defaultMessage: 'Calendar URL',
-  },
-  descriptionCalendarURL: {
-    id: 'Must point to an iCal/ics file.',
-    defaultMessage: 'Must point to an iCal/ics file.',
-  },
-});
+const getToolbarChoices = (intl) => {
+  return [
+    ['dayGridMonth', intl.formatMessage(messages.labelDayGridMonth)],
+    ['timeGridWeek', intl.formatMessage(messages.labelTimeGridWeek)],
+    ['timeGridDay', intl.formatMessage(messages.labelTimeGridDay)],
+    ['listMonth', intl.formatMessage(messages.labelListMonth)],
+    ['listWeek', intl.formatMessage(messages.labelListWeek)],
+    ['listDay', intl.formatMessage(messages.labelListDay)],
+    ['next', intl.formatMessage(messages.labelNext)],
+    ['prev', intl.formatMessage(messages.lebelPrev)],
+    ['today', intl.formatMessage(messages.labelToday)],
+  ];
+};
 
 const FullCalendarBlockSchema = (intl) => {
   return {
@@ -23,7 +22,12 @@ const FullCalendarBlockSchema = (intl) => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['calendar_url'],
+        fields: [
+          'calendar_url',
+          'toolbar_left',
+          'toolbar_center',
+          'toolbar_right',
+        ],
       },
     ],
 
@@ -32,6 +36,30 @@ const FullCalendarBlockSchema = (intl) => {
         title: intl.formatMessage(messages.labelCalendarURL),
         description: intl.formatMessage(messages.descriptionCalendarURL),
         type: 'string',
+      },
+      toolbar_left: {
+        title: 'Toolbar left',
+        type: 'string',
+        factory: 'Choice',
+        choices: getToolbarChoices(intl),
+        isMulti: true,
+        initialValue: ['dayGridMonth', 'timeGridWeek', 'timeGridDay'],
+      },
+      toolbar_center: {
+        title: 'Toolbar center',
+        type: 'string',
+        factory: 'Choice',
+        choices: getToolbarChoices(intl),
+        isMulti: true,
+        initialValue: ['listMonth', 'listWeek', 'listDay'],
+      },
+      toolbar_right: {
+        title: 'Toolbar center',
+        type: 'string',
+        factory: 'Choice',
+        choices: getToolbarChoices(intl),
+        isMulti: true,
+        initialValue: ['prev', 'today', 'next'],
       },
     },
 

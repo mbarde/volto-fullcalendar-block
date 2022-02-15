@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2021-07-14T08:00:55.850Z\n"
+"POT-Creation-Date: 2022-02-15T13:21:57.243Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,51 @@ msgid "Calendar URL"
 msgstr ""
 
 #: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: Day
+msgid "Day"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: List day
+msgid "List day"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: List month
+msgid "List month"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: List week
+msgid "List week"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: Month
+msgid "Month"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
 # defaultMessage: Must point to an iCal/ics file.
 msgid "Must point to an iCal/ics file."
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: Next
+msgid "Next"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: Previous
+msgid "Previous"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: Today
+msgid "Today"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/schema
+# defaultMessage: Week
+msgid "Week"
 msgstr ""

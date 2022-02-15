@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useIntl } from 'react-intl';
 import FullCalendar from '@fullcalendar/react';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -6,6 +7,7 @@ import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import './fullcalendar.css';
+import messages from './messages';
 
 /* https://stackoverflow.com/a/43467144 */
 function isValidURL(string) {
@@ -19,6 +21,8 @@ function isValidURL(string) {
 }
 
 const FullCalendarBlockView = (props) => {
+  const intl = useIntl();
+
   /* server-side rendering with FullCalendar does not work here,
      so we need to render after client-side hydration - as described here:
      https://gist.github.com/gaearon/e7d97cdf38a2907924ea12e4ebdf3c85#option-2-lazily-show-component-with-uselayouteffect
@@ -74,13 +78,18 @@ const FullCalendarBlockView = (props) => {
   const fcOptions = {
     plugins: [dayGridPlugin, iCalendarPlugin, listPlugin, timeGridPlugin],
     buttonText: {
-      listWeek: 'List week',
-      listMonth: 'List month',
+      dayGridMonth: intl.formatMessage(messages.labelDayGridMonth),
+      timeGridWeek: intl.formatMessage(messages.labelTimeGridWeek),
+      timeGridDay: intl.formatMessage(messages.labelTimeGridDay),
+      listDay: intl.formatMessage(messages.labelListDay),
+      listWeek: intl.formatMessage(messages.labelListWeek),
+      listMonth: intl.formatMessage(messages.labelListMonth),
+      today: intl.formatMessage(messages.labelToday),
     },
     headerToolbar: {
-      left: 'dayGridMonth,timeGridWeek,timeGridDay',
-      center: 'listWeek,listMonth',
-      right: 'prev,next today',
+      left: data.toolbar_left?.join(','),
+      center: data.toolbar_center?.join(','),
+      right: data.toolbar_right?.join(','),
     },
     initialView: 'dayGridMonth',
   };

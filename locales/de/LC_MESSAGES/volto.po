@@ -20,5 +20,41 @@ msgid "Calendar URL"
 msgstr "Kalender URL"
 
 #: components/manage/Blocks/FullCalendar/schema
+msgid "Day"
+msgstr "Tag"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "List day"
+msgstr "Tag auflisten"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "List month"
+msgstr "Monat auflisten"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "List week"
+msgstr "Woche auflisten"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "Month"
+msgstr "Monat"
+
+#: components/manage/Blocks/FullCalendar/schema
 msgid "Must point to an iCal/ics file."
 msgstr "Muss auf eine iCal/ics-Datei zeigen."
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "Next"
+msgstr "Weiter"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "Previous"
+msgstr "Zurück"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "Today"
+msgstr "Heute"
+
+#: components/manage/Blocks/FullCalendar/schema
+msgid "Week"
+msgstr "Woche"

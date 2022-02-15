@@ -7,6 +7,21 @@ import FullCalendarBlockSchema from './schema';
 
 const FullCalendarBlockEdit = (props) => {
   const schema = FullCalendarBlockSchema(props.intl);
+
+  React.useEffect(() => {
+    const initialValues = {};
+
+    Object.keys(schema.properties).forEach((key) => {
+      if (schema.properties[key].hasOwnProperty('initialValue')) {
+        initialValues[key] = schema.properties[key].initialValue;
+      }
+    });
+    props.onChangeBlock(props.block, {
+      ...initialValues,
+      ...props.data,
+    });
+  }, []);
+
   return (
     <>
       <SidebarPortal selected={props.selected}>
