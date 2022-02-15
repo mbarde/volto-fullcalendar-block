@@ -59,17 +59,6 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
 
   let recurrences = [];
 
-  const isFullDayEvent = (event) => {
-    let start = new Date(event.start);
-    let end = new Date(event.end);
-    return (
-      start.getHours() === 0 &&
-      start.getMinutes() === 0 &&
-      end.getHours() === 23 &&
-      end.getMinutes() === 59
-    );
-  };
-
   let events = items
     .filter((i) => {
       if (i['@type'] !== 'Event') return false;
@@ -92,8 +81,23 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
   events = events.concat(recurrences);
 
   events = events.map((event) => {
-    if (isFullDayEvent(event)) {
+    let start = new Date(event.start);
+    let end = new Date(event.end);
+    if (
+      start.getHours() === 0 &&
+      start.getMinutes() === 0 &&
+      end.getHours() === 23 &&
+      end.getMinutes() === 59
+    ) {
+      /* full day event */
       event.start = event.start.slice(0, 10);
+      delete event.end;
+    }
+    if (
+      /* open end event */
+      end.getHours() === 23 &&
+      end.getMinutes() === 59
+    ) {
       delete event.end;
     }
     return event;
