@@ -14,6 +14,19 @@ Block for [Volto](https://github.com/plone/volto) to display events from an iCal
 ### Listing block variation
 
 * Display events within a listing block as calendar
+* In order to display recurrent events, you need to add a catalog index and metadata column:
+
+```XML
+<?xml version="1.0"?>
+<object name="portal_catalog">
+    <index name="recurrence" meta_type="FieldIndex">
+        <indexed_attr value="recurrence"/>
+    </index>
+    <column value="recurrence"/>
+</object>
+```
+
+(https://docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns)
 
 ## Setup
 
