@@ -38,7 +38,7 @@ const FullCalendarBlockSchema = (intl) => {
         type: 'string',
       },
       toolbar_left: {
-        title: 'Toolbar left',
+        title: intl.formatMessage(messages.labelToolbarLeft),
         type: 'string',
         factory: 'Choice',
         choices: getToolbarChoices(intl),
@@ -46,7 +46,7 @@ const FullCalendarBlockSchema = (intl) => {
         initialValue: ['dayGridMonth', 'timeGridWeek', 'timeGridDay'],
       },
       toolbar_center: {
-        title: 'Toolbar center',
+        title: intl.formatMessage(messages.labelToolbarCenter),
         type: 'string',
         factory: 'Choice',
         choices: getToolbarChoices(intl),
@@ -54,7 +54,7 @@ const FullCalendarBlockSchema = (intl) => {
         initialValue: ['listMonth', 'listWeek', 'listDay'],
       },
       toolbar_right: {
-        title: 'Toolbar center',
+        title: intl.formatMessage(messages.labelToolbarRight),
         type: 'string',
         factory: 'Choice',
         choices: getToolbarChoices(intl),

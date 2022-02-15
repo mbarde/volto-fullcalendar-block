@@ -11,50 +11,62 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Calendar Settings"
 msgstr "Kalender Einstellungen"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Calendar URL"
 msgstr "Kalender URL"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Day"
 msgstr "Tag"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "List day"
 msgstr "Tag auflisten"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "List month"
 msgstr "Monat auflisten"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "List week"
 msgstr "Woche auflisten"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Month"
 msgstr "Monat"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Must point to an iCal/ics file."
 msgstr "Muss auf eine iCal/ics-Datei zeigen."
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Next"
 msgstr "Weiter"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Previous"
 msgstr "Zurück"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Today"
 msgstr "Heute"
 
-#: components/manage/Blocks/FullCalendar/schema
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar center"
+msgstr "Schaltflächen mittig"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar left"
+msgstr "Schaltflächen links"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar right"
+msgstr "Schaltflächen rechts"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Week"
 msgstr "Woche"

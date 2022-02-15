@@ -49,6 +49,18 @@ const messages = defineMessages({
     id: 'Today',
     defaultMessage: 'Today',
   },
+  labelToolbarLeft: {
+    id: 'Toolbar left',
+    defaultMessage: 'Toolbar left',
+  },
+  labelToolbarCenter: {
+    id: 'Toolbar center',
+    defaultMessage: 'Toolbar center',
+  },
+  labelToolbarRight: {
+    id: 'Toolbar right',
+    defaultMessage: 'Toolbar right',
+  },
 });
 
 export default messages;
