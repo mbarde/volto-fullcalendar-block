@@ -6,6 +6,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
+import allLocales from '@fullcalendar/core/locales-all';
 import './fullcalendar.css';
 import messages from './messages';
 
@@ -92,6 +93,8 @@ const FullCalendarBlockView = (props) => {
       right: data.toolbar_right?.join(','),
     },
     initialView: data.initial_view ?? 'dayGridMonth',
+    locales: allLocales,
+    locale: intl.locale ?? 'en',
   };
 
   return (
