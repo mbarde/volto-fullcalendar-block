@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-02-15T14:23:55.124Z\n"
+"POT-Creation-Date: 2022-02-15T15:39:40.216Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,11 @@ msgstr ""
 #: components/manage/Blocks/FullCalendar/messages
 # defaultMessage: Day
 msgid "Day"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: Calendar
+msgid "FullCalendar"
 msgstr ""
 
 #: components/manage/Blocks/FullCalendar/messages

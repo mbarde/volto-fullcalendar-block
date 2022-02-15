@@ -1,6 +1,6 @@
 {
   "name": "@mbarde/volto-fullcalendar-block",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "author": "Matthias Barde",
   "description": "volto-fullcalendar-block: Volto add-on",
   "main": "src/index.js",

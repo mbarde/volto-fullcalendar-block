@@ -1,5 +1,9 @@
 import calendarSVG from '@plone/volto/icons/calendar.svg';
-import { FullCalendarBlockView, FullCalendarBlockEdit } from './components';
+import {
+  FullCalendarBlockView,
+  FullCalendarBlockEdit,
+  FullCalendarListing,
+} from './components';
 
 const applyConfig = (config) => {
   config.blocks.blocksConfig.fullcalendar = {
@@ -18,6 +22,16 @@ const applyConfig = (config) => {
       view: [],
     },
   };
+
+  config.blocks.blocksConfig.listing.variations = [
+    ...config.blocks.blocksConfig.listing.variations,
+    {
+      id: 'fullcalendar',
+      isDefault: false,
+      title: 'FullCalendar',
+      template: FullCalendarListing,
+    },
+  ];
   return config;
 };
 

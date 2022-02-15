@@ -24,6 +24,10 @@ msgid "Day"
 msgstr "Tag"
 
 #: components/manage/Blocks/FullCalendar/messages
+msgid "FullCalendar"
+msgstr "Kalender"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Initial view"
 msgstr "Standardansicht"
 
