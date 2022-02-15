@@ -1,6 +1,6 @@
 import messages from './messages.js';
 
-const getToolbarChoices = (intl) => {
+const getViewChoices = (intl) => {
   return [
     ['dayGridMonth', intl.formatMessage(messages.labelDayGridMonth)],
     ['timeGridWeek', intl.formatMessage(messages.labelTimeGridWeek)],
@@ -8,10 +8,15 @@ const getToolbarChoices = (intl) => {
     ['listMonth', intl.formatMessage(messages.labelListMonth)],
     ['listWeek', intl.formatMessage(messages.labelListWeek)],
     ['listDay', intl.formatMessage(messages.labelListDay)],
+  ];
+};
+
+const getToolbarChoices = (intl) => {
+  return getViewChoices(intl).concat([
     ['next', intl.formatMessage(messages.labelNext)],
     ['prev', intl.formatMessage(messages.lebelPrev)],
     ['today', intl.formatMessage(messages.labelToday)],
-  ];
+  ]);
 };
 
 const FullCalendarBlockSchema = (intl) => {
@@ -24,6 +29,7 @@ const FullCalendarBlockSchema = (intl) => {
         title: 'Default',
         fields: [
           'calendar_url',
+          'initial_view',
           'toolbar_left',
           'toolbar_center',
           'toolbar_right',
@@ -36,6 +42,14 @@ const FullCalendarBlockSchema = (intl) => {
         title: intl.formatMessage(messages.labelCalendarURL),
         description: intl.formatMessage(messages.descriptionCalendarURL),
         type: 'string',
+      },
+      initial_view: {
+        title: intl.formatMessage(messages.labelInitialView),
+        type: 'string',
+        factory: 'Choice',
+        choices: getViewChoices(intl),
+        isMulti: false,
+        initialValue: 'dayGridMonth',
       },
       toolbar_left: {
         title: intl.formatMessage(messages.labelToolbarLeft),

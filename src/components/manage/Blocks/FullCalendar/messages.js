@@ -61,6 +61,10 @@ const messages = defineMessages({
     id: 'Toolbar right',
     defaultMessage: 'Toolbar right',
   },
+  labelInitialView: {
+    id: 'Initial view',
+    defaultMessage: 'Initial view',
+  },
 });
 
 export default messages;

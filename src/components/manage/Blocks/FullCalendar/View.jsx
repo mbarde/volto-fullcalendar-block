@@ -91,7 +91,7 @@ const FullCalendarBlockView = (props) => {
       center: data.toolbar_center?.join(','),
       right: data.toolbar_right?.join(','),
     },
-    initialView: 'dayGridMonth',
+    initialView: data.initial_view ?? 'dayGridMonth',
   };
 
   return (
