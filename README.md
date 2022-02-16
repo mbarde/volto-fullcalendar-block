@@ -44,7 +44,7 @@ Block for [Volto](https://github.com/plone/volto) to display events from an iCal
   ],
 
   "dependencies": {
-      "@mbarde/volto-fullcalendar-block": "^0.5.0"
+      "@mbarde/volto-fullcalendar-block": "*"
   }
   ```
 
