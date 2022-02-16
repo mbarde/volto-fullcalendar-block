@@ -40,6 +40,8 @@ https://user-images.githubusercontent.com/4497578/154287799-eca71fe0-4ce2-4e9d-8
 
 1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
 
+(for example via `docker run --name plone -p 8080:8080 -e SITE=Plone -e PROFILES="profile-plone.restapi:blocks" plone`)
+
 2. Start Volto frontend
 
 - If you already have a volto project, just update `package.json`:
