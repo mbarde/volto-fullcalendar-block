@@ -73,9 +73,17 @@ const messages = defineMessages({
     id: 'Title',
     defaultMessage: 'Title',
   },
-  labelTitleFormat: {
-    id: 'Title format',
-    defaultMessage: 'Title format',
+  labelTitleFormatYear: {
+    id: 'Title: Year format',
+    defaultMessage: 'Title: Year format',
+  },
+  labelTitleFormatMonth: {
+    id: 'Title: Month format',
+    defaultMessage: 'Title: Month format',
+  },
+  labelTitleFormatDay: {
+    id: 'Title: Day format',
+    defaultMessage: 'Title: Day format',
   },
   labelTitleShort: {
     id: 'Short',
@@ -85,21 +93,13 @@ const messages = defineMessages({
     id: 'Long',
     defaultMessage: 'Long',
   },
-  labelTitleShortWithDay: {
-    id: 'Short with day',
-    defaultMessage: 'Short with day',
+  labelTitleNumeric: {
+    id: 'Numeric',
+    defaultMessage: 'Numeric',
   },
-  labelTitleLongWithDay: {
-    id: 'Long with day',
-    defaultMessage: 'Long with day',
-  },
-  labelTitleShortDate: {
-    id: 'Full date (short)',
-    defaultMessage: 'Full date (short)',
-  },
-  labelTitleLongDate: {
-    id: 'Full date (long)',
-    defaultMessage: 'Full date (long)',
+  labelTitle2Digit: {
+    id: '2-digit',
+    defaultMessage: '2-digit',
   },
 });
 

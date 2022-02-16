@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2022-02-16T09:43:08.049Z\n"
+"POT-Creation-Date: 2022-02-16T11:16:48.874Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: 2-digit
+msgid "2-digit"
+msgstr ""
 
 #: components/manage/Blocks/FullCalendar/messages
 # defaultMessage: Calendar Settings
@@ -54,6 +59,11 @@ msgid "List week"
 msgstr ""
 
 #: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: Long
+msgid "Long"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/messages
 # defaultMessage: Month
 msgid "Month"
 msgstr ""
@@ -69,13 +79,38 @@ msgid "Next"
 msgstr ""
 
 #: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: Numeric
+msgid "Numeric"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/messages
 # defaultMessage: Previous
 msgid "Previous"
 msgstr ""
 
 #: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: Short
+msgid "Short"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/messages
 # defaultMessage: Title
 msgid "Title"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: Title: Day format
+msgid "Title: Day format"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: Title: Month format
+msgid "Title: Month format"
+msgstr ""
+
+#: components/manage/Blocks/FullCalendar/messages
+# defaultMessage: Title: Year format
+msgid "Title: Year format"
 msgstr ""
 
 #: components/manage/Blocks/FullCalendar/messages

@@ -77,12 +77,10 @@ const FullCalendarBlockView = (props) => {
   };
 
   let titleFormat = {
-    year: 'numeric',
-    month: 'long',
+    year: data.title_format_year,
+    month: data.title_format_month,
+    day: data.title_format_day,
   };
-  if (data.title_format) {
-    titleFormat = JSON.parse(data.title_format);
-  }
 
   const fcOptions = {
     plugins: [dayGridPlugin, iCalendarPlugin, listPlugin, timeGridPlugin],

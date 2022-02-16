@@ -12,6 +12,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: components/manage/Blocks/FullCalendar/messages
+msgid "2-digit"
+msgstr "2-stellig"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Calendar Settings"
 msgstr "Kalender Einstellungen"
 
@@ -44,6 +48,10 @@ msgid "List week"
 msgstr "Woche auflisten"
 
 #: components/manage/Blocks/FullCalendar/messages
+msgid "Long"
+msgstr "Lang"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Month"
 msgstr "Monat"
 
@@ -56,12 +64,32 @@ msgid "Next"
 msgstr "Weiter"
 
 #: components/manage/Blocks/FullCalendar/messages
+msgid "Numeric"
+msgstr "Numerisch"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Previous"
 msgstr "Zurück"
 
 #: components/manage/Blocks/FullCalendar/messages
+msgid "Short"
+msgstr "Kurz"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Title"
 msgstr "Titel"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Day format"
+msgstr "Titel: Format Tag"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Month format"
+msgstr "Titel: Format Monat"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Year format"
+msgstr "Titel: Format Jahr"
 
 #: components/manage/Blocks/FullCalendar/messages
 msgid "Today"
