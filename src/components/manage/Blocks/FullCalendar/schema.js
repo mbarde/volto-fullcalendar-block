@@ -20,6 +20,35 @@ const getToolbarChoices = (intl) => {
   ]);
 };
 
+const getTitleFormats = (intl) => {
+  return [
+    [
+      '{"year": "numeric", "month": "short"}',
+      intl.formatMessage(messages.labelTitleShort),
+    ],
+    [
+      '{"year": "numeric", "month": "long"}',
+      intl.formatMessage(messages.labelTitleLong),
+    ],
+    [
+      '{"year": "numeric", "month": "short", "day": "numeric"}',
+      intl.formatMessage(messages.labelTitleShortWithDay),
+    ],
+    [
+      '{"year": "numeric", "month": "long", "day": "numeric"}',
+      intl.formatMessage(messages.labelTitleLongWithDay),
+    ],
+    [
+      '{"year": "2-digit", "month": "2-digit", "day": "2-digit"}',
+      intl.formatMessage(messages.labelTitleShortDate),
+    ],
+    [
+      '{"year": "numeric", "month": "2-digit", "day": "2-digit"}',
+      intl.formatMessage(messages.labelTitleLongDate),
+    ],
+  ];
+};
+
 const FullCalendarBlockSchema = (intl) => {
   return {
     title: intl.formatMessage(messages.labelCalendarSettings),
@@ -34,6 +63,7 @@ const FullCalendarBlockSchema = (intl) => {
           'toolbar_left',
           'toolbar_center',
           'toolbar_right',
+          'title_format',
         ],
       },
     ],
@@ -56,9 +86,6 @@ const FullCalendarBlockSchema = (intl) => {
         title: intl.formatMessage(messages.labelToolbarLeft),
         type: 'string',
         factory: 'Choice',
-        choices: getToolbarChoices(intl),
-        isMulti: true,
-        initialValue: ['dayGridMonth', 'timeGridWeek', 'timeGridDay'],
       },
       toolbar_center: {
         title: intl.formatMessage(messages.labelToolbarCenter),
@@ -75,6 +102,13 @@ const FullCalendarBlockSchema = (intl) => {
         choices: getToolbarChoices(intl),
         isMulti: true,
         initialValue: ['prev', 'today', 'next'],
+      },
+      title_format: {
+        title: intl.formatMessage(messages.labelTitleFormat),
+        type: 'string',
+        factory: 'Choice',
+        choices: getTitleFormats(intl),
+        isMulti: false,
       },
     },
 

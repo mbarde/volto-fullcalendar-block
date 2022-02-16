@@ -73,6 +73,34 @@ const messages = defineMessages({
     id: 'Title',
     defaultMessage: 'Title',
   },
+  labelTitleFormat: {
+    id: 'Title format',
+    defaultMessage: 'Title format',
+  },
+  labelTitleShort: {
+    id: 'Short',
+    defaultMessage: 'Short',
+  },
+  labelTitleLong: {
+    id: 'Long',
+    defaultMessage: 'Long',
+  },
+  labelTitleShortWithDay: {
+    id: 'Short with day',
+    defaultMessage: 'Short with day',
+  },
+  labelTitleLongWithDay: {
+    id: 'Long with day',
+    defaultMessage: 'Long with day',
+  },
+  labelTitleShortDate: {
+    id: 'Full date (short)',
+    defaultMessage: 'Full date (short)',
+  },
+  labelTitleLongDate: {
+    id: 'Full date (long)',
+    defaultMessage: 'Full date (long)',
+  },
 });
 
 export default messages;
