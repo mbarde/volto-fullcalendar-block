@@ -2,16 +2,12 @@
 
 Block for [Volto](https://github.com/plone/volto) to display events from an iCal/ics file in a [FullCalendar](https://fullcalendar.io/).
 
-![Demo](https://raw.githubusercontent.com/mbarde/volto-fullcalendar-block/docs/docs/demo.gif)
-
 ## Features
 
-### Calendar block
 
-* Specifiy an URL to an .ics/.iCal file -> Contained events are displayed in the calendar using FullCalendars [iCalendar plugin](https://fullcalendar.io/docs/icalendar)
-* Configure FullCalendar toolbar via block settings
+### Listing block variation for Plone events
 
-### Listing block variation
+https://user-images.githubusercontent.com/4497578/154287664-6153ae22-27dd-48ed-984a-93817ef70431.mp4
 
 * Display events within a listing block as calendar
 * In order to display recurrent events, you need to add a catalog index and metadata column:
@@ -25,8 +21,18 @@ Block for [Volto](https://github.com/plone/volto) to display events from an iCal
     <column value="recurrence"/>
 </object>
 ```
-
 (https://docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns)
+
+
+### Calendar block for remote events
+
+https://user-images.githubusercontent.com/4497578/154287676-295386f9-faac-47e8-b0ef-f017f8c80dde.mp4
+
+* Specifiy an URL to an .ics/.iCal file -> Contained events are displayed in the calendar using FullCalendars [iCalendar plugin](https://fullcalendar.io/docs/icalendar)
+
+### Configure FullCalendar toolbar via block settings
+
+https://user-images.githubusercontent.com/4497578/154287799-eca71fe0-4ce2-4e9d-8921-9729e191f2fc.mp4
 
 ## Setup
 
