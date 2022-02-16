@@ -21,6 +21,9 @@ const getToolbarChoices = (intl) => {
 };
 
 const FullCalendarBlockSchema = (intl) => {
+  const viewChoices = getViewChoices(intl);
+  const toolbarChoices = getToolbarChoices(intl);
+
   return {
     title: intl.formatMessage(messages.labelCalendarSettings),
 
@@ -51,33 +54,33 @@ const FullCalendarBlockSchema = (intl) => {
         title: intl.formatMessage(messages.labelInitialView),
         type: 'string',
         factory: 'Choice',
-        choices: getViewChoices(intl),
+        choices: viewChoices,
         isMulti: false,
-        initialValue: 'dayGridMonth',
+        default: 'dayGridMonth',
       },
       toolbar_left: {
         title: intl.formatMessage(messages.labelToolbarLeft),
         type: 'string',
         factory: 'Choice',
-        choices: getToolbarChoices(intl),
+        choices: toolbarChoices,
         isMulti: true,
-        initialValue: ['dayGridMonth', 'timeGridWeek', 'timeGridDay'],
+        default: ['dayGridMonth', 'timeGridWeek', 'timeGridDay'],
       },
       toolbar_center: {
         title: intl.formatMessage(messages.labelToolbarCenter),
         type: 'string',
         factory: 'Choice',
-        choices: getToolbarChoices(intl),
+        choices: toolbarChoices,
         isMulti: true,
-        initialValue: ['title'],
+        default: ['title'],
       },
       toolbar_right: {
         title: intl.formatMessage(messages.labelToolbarRight),
         type: 'string',
         factory: 'Choice',
-        choices: getToolbarChoices(intl),
+        choices: toolbarChoices,
         isMulti: true,
-        initialValue: ['prev', 'today', 'next'],
+        default: ['prev', 'today', 'next'],
       },
       title_format_year: {
         title: intl.formatMessage(messages.labelTitleFormatYear),
@@ -88,7 +91,7 @@ const FullCalendarBlockSchema = (intl) => {
           ['2-digit', intl.formatMessage(messages.labelTitle2Digit)],
         ],
         isMulti: false,
-        initialValue: 'numeric',
+        default: 'numeric',
       },
       title_format_month: {
         title: intl.formatMessage(messages.labelTitleFormatMonth),
@@ -100,7 +103,7 @@ const FullCalendarBlockSchema = (intl) => {
           ['2-digit', intl.formatMessage(messages.labelTitle2Digit)],
         ],
         isMulti: false,
-        initialValue: 'long',
+        default: 'long',
       },
       title_format_day: {
         title: intl.formatMessage(messages.labelTitleFormatDay),

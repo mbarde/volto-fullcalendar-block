@@ -8,16 +8,16 @@ import FullCalendarBlockSchema from './schema';
 const FullCalendarBlockEdit = (props) => {
   const schema = FullCalendarBlockSchema(props.intl);
 
+  /* we need to set defaults manually for some fields */
   React.useEffect(() => {
-    const initialValues = {};
-
+    const defaultValues = {};
     Object.keys(schema.properties).forEach((key) => {
-      if (schema.properties[key].hasOwnProperty('initialValue')) {
-        initialValues[key] = schema.properties[key].initialValue;
+      if (schema.properties[key].hasOwnProperty('default')) {
+        defaultValues[key] = schema.properties[key].default;
       }
     });
     props.onChangeBlock(props.block, {
-      ...initialValues,
+      ...defaultValues,
       ...props.data,
     });
   }, []);

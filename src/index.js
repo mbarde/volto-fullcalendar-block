@@ -4,6 +4,7 @@ import {
   FullCalendarBlockEdit,
   FullCalendarListing,
 } from './components';
+import FullCalendarBlockSchema from './components/manage/Blocks/FullCalendar/schema';
 
 const applyConfig = (config) => {
   config.blocks.blocksConfig.fullcalendar = {
@@ -30,6 +31,17 @@ const applyConfig = (config) => {
       isDefault: false,
       title: 'FullCalendar',
       template: FullCalendarListing,
+      /* use schemaEnhancer to add fields of FullCalendarBlock here */
+      schemaEnhancer: ({ schema, formData, intl }) => {
+        const blockSchema = FullCalendarBlockSchema(intl);
+        Object.keys(blockSchema.properties).forEach((key) => {
+          if (key !== 'calendar_url') {
+            schema.properties[key] = blockSchema.properties[key];
+            schema.fieldsets[0].fields.push(key);
+          }
+        });
+        return schema;
+      },
     },
   ];
   return config;

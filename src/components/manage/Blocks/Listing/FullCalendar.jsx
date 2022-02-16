@@ -41,7 +41,7 @@ const expand = (item) => {
   });
 };
 
-const FullCalendarListing = ({ items, moment: momentlib }) => {
+const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
   const intl = useIntl();
 
   const moment = momentlib.default;
@@ -114,11 +114,16 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
       today: intl.formatMessage(messages.labelToday),
     },
     headerToolbar: {
-      left: 'dayGridMonth,timeGridWeek,timeGridDay',
-      center: 'title',
-      right: 'prev,next today',
+      left: props.toolbar_left?.join(','),
+      center: props.toolbar_center?.join(','),
+      right: props.toolbar_right?.join(','),
     },
-    initialView: 'dayGridMonth',
+    initialView: props.initial_view ?? 'dayGridMonth',
+    titleFormat: {
+      year: props.title_format_year,
+      month: props.title_format_month,
+      day: props.title_format_day,
+    },
     locales: allLocales,
     locale: intl.locale ?? 'en',
   };
