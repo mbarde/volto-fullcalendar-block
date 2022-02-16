@@ -16,6 +16,7 @@ const getToolbarChoices = (intl) => {
     ['next', intl.formatMessage(messages.labelNext)],
     ['prev', intl.formatMessage(messages.lebelPrev)],
     ['today', intl.formatMessage(messages.labelToday)],
+    ['title', intl.formatMessage(messages.labelTitle)],
   ]);
 };
 
@@ -65,7 +66,7 @@ const FullCalendarBlockSchema = (intl) => {
         factory: 'Choice',
         choices: getToolbarChoices(intl),
         isMulti: true,
-        initialValue: ['listMonth', 'listWeek', 'listDay'],
+        initialValue: ['title'],
       },
       toolbar_right: {
         title: intl.formatMessage(messages.labelToolbarRight),

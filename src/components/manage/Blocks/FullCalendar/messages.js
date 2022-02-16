@@ -69,6 +69,10 @@ const messages = defineMessages({
     id: 'Initial view',
     defaultMessage: 'Initial view',
   },
+  labelTitle: {
+    id: 'Title',
+    defaultMessage: 'Title',
+  },
 });
 
 export default messages;

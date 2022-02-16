@@ -60,6 +60,10 @@ msgid "Previous"
 msgstr "Zurück"
 
 #: components/manage/Blocks/FullCalendar/messages
+msgid "Title"
+msgstr "Titel"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Today"
 msgstr "Heute"
 

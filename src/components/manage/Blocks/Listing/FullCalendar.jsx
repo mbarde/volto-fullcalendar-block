@@ -115,7 +115,7 @@ const FullCalendarListing = ({ items, moment: momentlib }) => {
     },
     headerToolbar: {
       left: 'dayGridMonth,timeGridWeek,timeGridDay',
-      center: 'listWeek,listMonth',
+      center: 'title',
       right: 'prev,next today',
     },
     initialView: 'dayGridMonth',
