@@ -1,0 +1,20 @@
+@import '@plone/volto/theme/themes/default/globals/site.variables';
+
+.calendar-wrapper {
+  position: relative;
+}
+
+.calendar-wrapper .ui.loader {
+  display: block;
+}
+
+@media only screen and (max-width: @tabletBreakpoint) {
+  .fc .fc-toolbar.fc-header-toolbar {
+    flex-direction: column;
+    margin-top: 1.5rem;
+
+    h2 {
+      margin: 0.5rem;
+    }
+  }
+}

@@ -7,7 +7,7 @@ import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import allLocales from '@fullcalendar/core/locales-all';
-import './fullcalendar.css';
+import './fullcalendar.less';
 import messages from './messages';
 
 /* https://stackoverflow.com/a/43467144 */
