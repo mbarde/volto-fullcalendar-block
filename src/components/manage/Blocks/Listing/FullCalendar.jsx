@@ -103,6 +103,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
   });
 
   const fcOptions = {
+    initialDate: props.initial_date || null,
     plugins: [dayGridPlugin, listPlugin, timeGridPlugin],
     buttonText: {
       dayGridMonth: intl.formatMessage(messages.labelDayGridMonth),

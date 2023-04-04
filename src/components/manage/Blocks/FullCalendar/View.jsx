@@ -77,6 +77,7 @@ const FullCalendarBlockView = (props) => {
   };
 
   const fcOptions = {
+    initialDate: data.initial_date || null,
     plugins: [dayGridPlugin, iCalendarPlugin, listPlugin, timeGridPlugin],
     buttonText: {
       dayGridMonth: intl.formatMessage(messages.labelDayGridMonth),

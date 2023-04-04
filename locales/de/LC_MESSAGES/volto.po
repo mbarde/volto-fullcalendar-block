@@ -32,6 +32,14 @@ msgid "FullCalendar"
 msgstr "Kalender"
 
 #: components/manage/Blocks/FullCalendar/messages
+msgid "If not set, current date is used."
+msgstr "Falls nicht gesetzt, wird das aktuelle Datum genutzt."
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Initial date"
+msgstr "Ausgangsdatum"
+
+#: components/manage/Blocks/FullCalendar/messages
 msgid "Initial view"
 msgstr "Standardansicht"
 

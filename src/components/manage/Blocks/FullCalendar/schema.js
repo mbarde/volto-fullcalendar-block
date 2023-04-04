@@ -40,6 +40,7 @@ const FullCalendarBlockSchema = (intl) => {
           'title_format_year',
           'title_format_month',
           'title_format_day',
+          'initial_date',
         ],
       },
     ],
@@ -114,6 +115,12 @@ const FullCalendarBlockSchema = (intl) => {
           ['2-digit', intl.formatMessage(messages.labelTitle2Digit)],
         ],
         isMulti: false,
+      },
+      initial_date: {
+        title: intl.formatMessage(messages.labelInitialDate),
+        description: intl.formatMessage(messages.descriptionInitialDate),
+        type: 'datetime',
+        dateOnly: true,
       },
     },
 

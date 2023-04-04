@@ -101,6 +101,14 @@ const messages = defineMessages({
     id: '2-digit',
     defaultMessage: '2-digit',
   },
+  labelInitialDate: {
+    id: 'Initial date',
+    defaultMessage: 'Initial date',
+  },
+  descriptionInitialDate: {
+    id: 'If not set, current date is used.',
+    defaultMessage: 'If not set, current date is used.',
+  },
 });
 
 export default messages;
