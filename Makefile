@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 
 DIR=$(shell basename $$(pwd))
-ADDON ?= "@uniko/volto-fullcalendar-block"
+ADDON ?= "@mbarde/volto-fullcalendar-block"
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects

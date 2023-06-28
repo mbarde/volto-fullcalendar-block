@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/4497578/154287664-6153ae22-27dd-48ed-9
     <column value="recurrence"/>
 </object>
 ```
-(https://docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns)
+More details checkout the following link: https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns
 
 
 ### Calendar block for remote events
@@ -40,7 +40,11 @@ https://user-images.githubusercontent.com/4497578/154287799-eca71fe0-4ce2-4e9d-8
 
 1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
 
-(for example via `docker run --name plone -p 8080:8080 -e SITE=Plone -e PROFILES="profile-plone.restapi:blocks" plone`)
+   For example [Docker container](https://6.docs.plone.org/install/containers/) via command:
+
+   ```
+   docker run --name plone -p 8080:8080 -e SITE=Plone -e PROFILES="profile-plone.restapi:blocks" plone
+   ```
 
 2. Start Volto frontend
 

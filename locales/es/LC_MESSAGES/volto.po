@@ -1,0 +1,129 @@
+# Translation of volto.pot to Spanish
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-04T08:15:19.384Z\n"
+"PO-Revision-Date: 2023-06-27 22:15-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language: es\n"
+"Language-Team: ES <LL@li.org>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Preferred-Encodings: utf-8\n"
+"MIME-Version: 1.0\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Domain: volto\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "2-digit"
+msgstr "2 dígitos"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Calendar Settings"
+msgstr "Configuración del calendario"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Calendar URL"
+msgstr "Calendario URL"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Day"
+msgstr "Día"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "FullCalendar"
+msgstr "FullCalendar"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "If not set, current date is used."
+msgstr "Si no se establece, se utiliza la fecha actual."
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Initial date"
+msgstr "Fecha inicial"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Initial view"
+msgstr "Vista inicial"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List day"
+msgstr "Día de la lista"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List month"
+msgstr "Mes de la lista"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "List week"
+msgstr "Semana de la lista"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Long"
+msgstr "Largo"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Month"
+msgstr "Mes"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Must point to an iCal/ics file."
+msgstr "Debe apuntar a un archivo iCal/ics."
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Next"
+msgstr "Próximo"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Numeric"
+msgstr "Numérico"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Previous"
+msgstr "Previo"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Short"
+msgstr "Corto"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title"
+msgstr "Título"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Day format"
+msgstr "Título: formato de día"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Month format"
+msgstr "Título: formato de mes"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Title: Year format"
+msgstr "Título: formato de año"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Today"
+msgstr "Hoy"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar center"
+msgstr "Barra de herramientas al centro"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar left"
+msgstr "Barra de herramientas a la izquierda"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Toolbar right"
+msgstr "Barra de herramientas a la derecha"
+
+#: components/manage/Blocks/FullCalendar/messages
+msgid "Week"
+msgstr "Semana"
