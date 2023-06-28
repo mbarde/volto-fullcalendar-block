@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/4497578/154287664-6153ae22-27dd-48ed-9
     <column value="recurrence"/>
 </object>
 ```
-(https://docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns)
+More details checkout the following link: https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns
 
 
 ### Calendar block for remote events
