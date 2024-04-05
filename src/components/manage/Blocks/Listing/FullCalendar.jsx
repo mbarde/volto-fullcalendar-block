@@ -65,7 +65,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
 
   let events = items
     .filter((i) => {
-      if (!Object.keys().includes(i['@type'])) return false;
+      if (!Object.keys(contentConverters).includes(i['@type'])) return false;
 
       if (i.recurrence) {
         recurrences = recurrences.concat(expand(i));
