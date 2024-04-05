@@ -5,6 +5,7 @@ import {
   FullCalendarListing,
 } from './components';
 import FullCalendarBlockSchema from './components/manage/Blocks/FullCalendar/schema';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 const applyConfig = (config) => {
   config.blocks.blocksConfig.fullcalendar = {
@@ -21,6 +22,16 @@ const applyConfig = (config) => {
     security: {
       addPermission: [],
       view: [],
+    },
+    contentConverters: {
+      Event: (item) => {
+        return {
+          title: item.title,
+          start: item.start,
+          end: item.end,
+          url: flattenToAppURL(item['@id']),
+        };
+      },
     },
   };
 

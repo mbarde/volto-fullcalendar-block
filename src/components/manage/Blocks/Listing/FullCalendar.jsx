@@ -9,6 +9,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { RRule, rrulestr } from 'rrule';
 import messages from '../FullCalendar/messages';
+import config from '@plone/volto';
 
 /* returns all events, computed by the reccurence rule of an Event item */
 const expand = (item) => {
@@ -59,9 +60,13 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
 
   let recurrences = [];
 
+  const contentConverters =
+    config.blocks.blocksConfig.fullcalendar.contentConverters;
+
   let events = items
     .filter((i) => {
-      if (i['@type'] !== 'Event') return false;
+      if (!Object.keys().includes(i['@type'])) return false;
+
       if (i.recurrence) {
         recurrences = recurrences.concat(expand(i));
         /* expand returns initial event as well, so we skip it here */
@@ -70,12 +75,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
       return true;
     })
     .map((i) => {
-      return {
-        title: i.title,
-        start: i.start,
-        end: i.end,
-        url: flattenToAppURL(i['@id']),
-      };
+      return contentConverters[i['@type']](i);
     });
 
   events = events.concat(recurrences);
