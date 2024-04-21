@@ -9,6 +9,9 @@ module.exports = {
       fs: false,
       net: false,
       dns: false,
+      path: false,
+      stream: false,
+      'stream-http': false,
     };
     return config;
   },
