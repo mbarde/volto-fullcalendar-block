@@ -9,7 +9,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { RRule, rrulestr } from 'rrule';
 import messages from '../FullCalendar/messages';
-import config from '@plone/volto';
+import config from '@plone/volto/registry';
 
 /* returns all events, computed by the reccurence rule of an Event item */
 const expand = (item) => {
