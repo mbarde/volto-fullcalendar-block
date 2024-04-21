@@ -29,6 +29,7 @@
     "@fullcalendar/timegrid": "5.9.0"
   },
   "devDependencies": {
-    "cypress": "11.1.0"
+    "cypress": "11.1.0",
+    "@plone/scripts": "^3.0.0"
   }
 }
