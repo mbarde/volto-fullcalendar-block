@@ -33,7 +33,7 @@ You need to register that function in the block config in your addon this way:
 
 
 ```js
-config.blocks.blocksConfig.fullcalendar['YourContentType'] = (item) => {
+config.blocks.blocksConfig.fullcalendar.contentConverters['YourContentType'] = (item) => {
   return {
     title: item.title,
     start: item.XXX, # <- point this attribute to the one that provides the start date
