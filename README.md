@@ -23,6 +23,29 @@ https://user-images.githubusercontent.com/4497578/154287664-6153ae22-27dd-48ed-9
 ```
 More details checkout the following link: https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns
 
+### Add content-types other than Events in the Calendar
+
+You may have developed a custom version of an Event that want to show in a calendar, or you may have other content-types that want to show in a calendar.
+
+To do so, you need to provide a function that returns the date, title and urls to show for your content-type.
+
+You need to register that function in the block config in your addon this way:
+
+
+```js
+config.blocks.blocksConfig.fullcalendar['YourContentType'] = (item) => {
+  return {
+    title: item.title,
+    start: item.XXX, # <- point this attribute to the one that provides the start date
+    end: item.XXXX,  # <- point this attribute to the one that provides the end date
+    url: flattenToAppURL[item['@id']] # <- point this attribute to the one that provides the url you want to go when clicking the event in the calendar
+  }
+};
+
+```
+
+The block already includes a default function for the Event content-type.
+
 
 ### Calendar block for remote events
 
