@@ -1,5 +1,3 @@
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
-
 const plugins = (defaultPlugins) => {
   return defaultPlugins;
 };
@@ -7,7 +5,6 @@ const plugins = (defaultPlugins) => {
 module.exports = {
   plugins,
   modify: (config, { target, dev }, webpack) => {
-    config.plugins.push(new NodePolyfillPlugin());
     config.resolve.fallback = {
       fs: false,
       net: false,
