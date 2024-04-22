@@ -29,7 +29,7 @@ You may have developed a custom version of an event or other content types that 
 
 To do so, you need to provide a function that returns the date, title, and URLs to show for your content type.
 
-You need to register that function in the block config in your addon this way:
+You need to register that function in the block configuration in your add-on this way:
 
 
 ```js
