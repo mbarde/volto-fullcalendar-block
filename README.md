@@ -27,7 +27,7 @@ More details checkout the following link: https://5.docs.plone.org/external/plon
 
 You may have developed a custom version of an event or other content types that want to show in a calendar.
 
-To do so, you need to provide a function that returns the date, title and urls to show for your content-type.
+To do so, you need to provide a function that returns the date, title, and URLs to show for your content type.
 
 You need to register that function in the block config in your addon this way:
 
