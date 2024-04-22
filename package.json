@@ -16,7 +16,7 @@
     "url": "git@github.com:mbarde/volto-fullcalendar-block.git"
   },
   "scripts": {
-    "i18n": "NODE_ENV=production node src/i18n.js",
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "cypress:run": "./node_modules/cypress/bin/cypress run",
     "cypress:open": "./node_modules/cypress/bin/cypress open"
   },
@@ -29,6 +29,7 @@
     "@fullcalendar/timegrid": "5.9.0"
   },
   "devDependencies": {
-    "cypress": "11.1.0"
+    "cypress": "11.1.0",
+    "@plone/scripts": "^3.0.0"
   }
 }
