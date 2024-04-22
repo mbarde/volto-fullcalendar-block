@@ -23,7 +23,7 @@ https://user-images.githubusercontent.com/4497578/154287664-6153ae22-27dd-48ed-9
 ```
 More details checkout the following link: https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns
 
-### Add content-types other than Events in the Calendar
+### Add content types other than events in the calendar
 
 You may have developed a custom version of an Event that want to show in a calendar, or you may have other content-types that want to show in a calendar.
 
