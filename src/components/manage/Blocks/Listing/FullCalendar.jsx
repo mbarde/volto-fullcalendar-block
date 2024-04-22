@@ -63,19 +63,53 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
   const contentConverters =
     config.blocks.blocksConfig.fullcalendar.contentConverters;
 
+  const filterItem = (item) => {
+    // check whether we have registered a converter
+    // for this item's type
+    if (Object.keys(contentConverters).includes(item['@type'])) {
+      return true;
+    }
+
+    // Check the recurrence thing
+    if (item.recurrence) {
+      recurrences = recurrences.concat(expand(item));
+      /* expand returns initial event as well, so we skip it here */
+      return false;
+    }
+    // Check if this item has a 'start' and 'end' attributes
+    if (item.start && item.end) {
+      return true;
+    }
+
+    // If everything fails, this is not something
+    // to be shown in the calendar
+    return false;
+  };
+
+  const convertItem = (item) => {
+    // Try to look in the block configuration whether there is any converter
+    // for the current item's type
+    if (Object.keys(contentConverters).includes(item['@type'])) {
+      return contentConverters[item['@type']](item);
+    }
+
+    // As we have already checked in the filterItem that this item
+    // has 'start' and 'end' attributes, it is safe to return them
+    // if there is no converter available
+    return {
+      start: item.start,
+      end: item.end,
+      title: item.title,
+      url: item['@id'],
+    };
+  };
+
   let events = items
     .filter((i) => {
-      if (!Object.keys(contentConverters).includes(i['@type'])) return false;
-
-      if (i.recurrence) {
-        recurrences = recurrences.concat(expand(i));
-        /* expand returns initial event as well, so we skip it here */
-        return false;
-      }
-      return true;
+      return filterItem(i);
     })
     .map((i) => {
-      return contentConverters[i['@type']](i);
+      return convertItem(i);
     });
 
   events = events.concat(recurrences);
