@@ -25,7 +25,7 @@ More details checkout the following link: https://5.docs.plone.org/external/plon
 
 ### Add content types other than events in the calendar
 
-You may have developed a custom version of an Event that want to show in a calendar, or you may have other content-types that want to show in a calendar.
+You may have developed a custom version of an event or other content types that want to show in a calendar.
 
 To do so, you need to provide a function that returns the date, title and urls to show for your content-type.
 
