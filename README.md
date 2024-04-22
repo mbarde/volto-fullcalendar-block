@@ -44,7 +44,7 @@ config.blocks.blocksConfig.fullcalendar.contentConverters['YourContentType'] = (
 
 ```
 
-The block already includes a default function for the Event content-type.
+The block already includes a default function for the event content type.
 
 
 ### Calendar block for remote events
