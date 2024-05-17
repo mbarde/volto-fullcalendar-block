@@ -10,12 +10,20 @@ const messages = defineMessages({
     defaultMessage: 'Calendar Settings',
   },
   labelCalendarURL: {
-    id: 'Calendar URL',
-    defaultMessage: 'Calendar URL',
+    id: 'Calendar URL or Google Calendar ID',
+    defaultMessage: 'Calendar URL or Google Calendar ID',
+  },
+  labelGoogleCalendarAPIKey: {
+    id: 'Google Calendar API Key',
+    defaultMessage: 'Google Calendar API Key',
   },
   descriptionCalendarURL: {
-    id: 'Must point to an iCal/ics file.',
-    defaultMessage: 'Must point to an iCal/ics file.',
+    id: 'Must point to an iCal/ics file or a Google Calendar ID.',
+    defaultMessage: 'Must point to an iCal/ics file or a Google Calendar ID.',
+  },
+  descriptionGoogleCalendarAPIKey: {
+    id: 'See https://fullcalendar.io/docs/google-calendar for how to create a Google Calendar API Key.',
+    defaultMessage: 'See https://fullcalendar.io/docs/google-calendar for how to create a Google Calendar API Key.',
   },
   labelDayGridMonth: {
     id: 'Month',

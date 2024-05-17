@@ -6,6 +6,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
+import googleCalendarPlugin from '@fullcalendar/google-calendar'
 import allLocales from '@fullcalendar/core/locales-all';
 import './fullcalendar.less';
 import messages from './messages';
@@ -41,6 +42,11 @@ const FullCalendarBlockView = (props) => {
           url: data.calendar_url,
           format: 'ics',
         }
+      :
+    data.calendar_url && data.calendar_url.includes('@group.calendar.google.com')
+      ? {
+        googleCalendarId: data.calendar_url
+      }
       : {};
 
   const calendarRef = useRef(null);
@@ -52,7 +58,7 @@ const FullCalendarBlockView = (props) => {
   const [storedEvents, setStoredEvents] = useState([]);
 
   useEffect(() => {
-    if (data.calendar_url && isValidURL(data.calendar_url)) {
+    if (data.calendar_url && (isValidURL(data.calendar_url) || data.calendar_url.includes('@group.calendar.google.com'))) {
       setStoredEvents(null);
     }
   }, [data.calendar_url]);
@@ -78,7 +84,8 @@ const FullCalendarBlockView = (props) => {
 
   const fcOptions = {
     initialDate: data.initial_date || null,
-    plugins: [dayGridPlugin, iCalendarPlugin, listPlugin, timeGridPlugin],
+    plugins: [dayGridPlugin, iCalendarPlugin, listPlugin, timeGridPlugin, googleCalendarPlugin],
+    googleCalendarApiKey: data.google_calendar_api_key,
     buttonText: {
       dayGridMonth: intl.formatMessage(messages.labelDayGridMonth),
       timeGridWeek: intl.formatMessage(messages.labelTimeGridWeek),
