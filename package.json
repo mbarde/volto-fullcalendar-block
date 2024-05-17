@@ -23,13 +23,14 @@
   "dependencies": {
     "@fullcalendar/core": "5.9.0",
     "@fullcalendar/daygrid": "5.9.0",
+    "@fullcalendar/google-calendar": "5.9.0",
     "@fullcalendar/icalendar": "5.9.0",
     "@fullcalendar/list": "5.9.0",
     "@fullcalendar/react": "5.9.0",
     "@fullcalendar/timegrid": "5.9.0"
   },
   "devDependencies": {
-    "cypress": "11.1.0",
-    "@plone/scripts": "^3.0.0"
+    "@plone/scripts": "^3.0.0",
+    "cypress": "11.1.0"
   }
 }

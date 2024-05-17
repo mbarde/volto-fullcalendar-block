@@ -33,6 +33,7 @@ const FullCalendarBlockSchema = (intl) => {
         title: 'Default',
         fields: [
           'calendar_url',
+          'google_calendar_api_key',
           'initial_view',
           'toolbar_left',
           'toolbar_center',
@@ -49,6 +50,11 @@ const FullCalendarBlockSchema = (intl) => {
       calendar_url: {
         title: intl.formatMessage(messages.labelCalendarURL),
         description: intl.formatMessage(messages.descriptionCalendarURL),
+        type: 'string',
+      },
+      google_calendar_api_key: {
+        title: intl.formatMessage(messages.labelGoogleCalendarAPIKey),
+        description: intl.formatMessage(messages.descriptionGoogleCalendarAPIKey),
         type: 'string',
       },
       initial_view: {
