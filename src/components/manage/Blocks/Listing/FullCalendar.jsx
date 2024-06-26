@@ -61,7 +61,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
 
   let events = items
     .filter((i) => {
-      if (i['@type'] !== 'Event') return false;
+      if (!i.start) return false;
       if (i.recurrence) {
         recurrences = recurrences.concat(expand(i));
         /* expand returns initial event as well, so we skip it here */
@@ -73,7 +73,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
       return {
         title: i.title,
         start: i.start,
-        end: i.end,
+        end: i.end || false,
         url: flattenToAppURL(i['@id']),
       };
     });
