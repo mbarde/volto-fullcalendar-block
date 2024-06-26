@@ -7,6 +7,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import allLocales from '@fullcalendar/core/locales-all';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import config from '@plone/volto/registry';
 import { RRule, rrulestr } from 'rrule';
 import messages from '../FullCalendar/messages';
 
@@ -127,6 +128,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
     },
     locales: allLocales,
     locale: intl.locale ?? 'en',
+    ...(config.settings.fullcalendar?.additionalOptions || {}),
   };
 
   return isClientSide && <FullCalendar events={events} {...fcOptions} />;

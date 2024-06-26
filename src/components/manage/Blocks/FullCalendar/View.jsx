@@ -7,6 +7,7 @@ import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import allLocales from '@fullcalendar/core/locales-all';
+import config from '@plone/volto/registry';
 import './fullcalendar.less';
 import messages from './messages';
 
@@ -101,6 +102,7 @@ const FullCalendarBlockView = (props) => {
     },
     locales: allLocales,
     locale: intl.locale ?? 'en',
+    ...(config.settings.fullcalendar?.additionalOptions || {}),
   };
 
   return (

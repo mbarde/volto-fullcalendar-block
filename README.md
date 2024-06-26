@@ -34,6 +34,59 @@ https://user-images.githubusercontent.com/4497578/154287676-295386f9-faac-47e8-b
 
 https://user-images.githubusercontent.com/4497578/154287799-eca71fe0-4ce2-4e9d-8921-9729e191f2fc.mp4
 
+### Customize FullCalendar options
+
+If you want to add props to the FullCalendar component (see: https://fullcalendar.io/docs/react#props), you can specify them in this config entry: 
+
+```Javascript
+config.settings.fullcalendar = {
+  additionalOptions: {
+    ...
+  }
+}
+```
+
+**Example: Custom event renderer to display descriptions as popups**
+
+(see: https://fullcalendar.io/docs/react#content-injection)
+
+```Javascript
+import { Popup } from 'semantic-ui-react';
+import '@plone/volto/config';
+
+export default function applyConfig(config) {
+  config.settings.fullcalendar = {
+    additionalOptions: {
+      eventContent: (eventInfo) => {
+        const MAX_LEN = 500;
+        const description =
+          (eventInfo.event.extendedProps?.description || '').length > MAX_LEN
+            ? eventInfo.event.extendedProps.description.slice(0, MAX_LEN) +
+              ' ...'
+            : eventInfo.event.extendedProps.description;
+        return (
+          <>
+            <div className="fc-event-time">{eventInfo.timeText}</div>
+            {description ? (
+              <Popup
+                content={description}
+                trigger={
+                  <div className="fc-event-title">{eventInfo.event.title}</div>
+                }
+                wide="very"
+              />
+            ) : (
+              <div className="fc-event-title">{eventInfo.event.title}</div>
+            )}
+          </>
+        );
+      },
+    },
+  };
+  return config;
+}
+```
+
 ## Setup
 
 ### Add volto-fullcalendar-block to your Volto project
