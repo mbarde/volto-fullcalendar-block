@@ -21,12 +21,13 @@
     "cypress:open": "./node_modules/cypress/bin/cypress open"
   },
   "dependencies": {
-    "@fullcalendar/core": "5.9.0",
-    "@fullcalendar/daygrid": "5.9.0",
-    "@fullcalendar/icalendar": "5.9.0",
-    "@fullcalendar/list": "5.9.0",
-    "@fullcalendar/react": "5.9.0",
-    "@fullcalendar/timegrid": "5.9.0"
+    "@fullcalendar/core": "6.1.14",
+    "@fullcalendar/daygrid": "6.1.14",
+    "@fullcalendar/icalendar": "6.1.14",
+    "@fullcalendar/list": "6.1.14",
+    "@fullcalendar/react": "6.1.14",
+    "@fullcalendar/timegrid": "6.1.14",
+    "ical.js": "1.5.0"
   },
   "devDependencies": {
     "@plone/scripts": "^3.0.0",
