@@ -1,4 +1,4 @@
-import { setupBeforeEach, tearDownAfterEach } from '../support';
+import { setupBeforeEach, tearDownAfterEach } from '../support/e2e';
 
 describe('Blocks Tests', () => {
   beforeEach(setupBeforeEach);
@@ -7,27 +7,30 @@ describe('Blocks Tests', () => {
   it('add FullCalendar for Listing', () => {
     let pageTitle = 'Listing as FullCalender';
 
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block')
+    cy.get('.documentFirstHeading')
       .clear()
       .type(pageTitle)
-      .get('.documentFirstHeading span[data-text]')
+      .get('.documentFirstHeading > span > span > span')
       .contains(pageTitle);
 
     // add listing block
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block').type(
-      '{enter}',
-    );
+    cy.get('.documentFirstHeading').type('{enter}');
     cy.get('.ui.basic.icon.button.block-add-button').first().click();
     cy.get('.ui.basic.icon.button.listing').first().click();
 
     // set variation to FullCalendar
     cy.get('#fieldset-default-field-label-initial_view').should('not.exist');
-    cy.get('#field-variation > .react-select__control').type('FullCalendar{enter}');
+    cy.get('#field-variation > .react-select__control').type(
+      'FullCalendar{enter}',
+    );
+    cy.get('#sidebar-properties').scrollTo(0, 500);
     cy.get('#fieldset-default-field-label-initial_view').should('be.visible');
 
     // filter for content type events
     cy.get('#field-query-0-querystring').type('Type{enter}');
-    cy.get('#default-query-0-querystring > div > div:nth-child(2) > div > div:nth-child(1) > div.field > div > div.react-select__control').type('Event{enter}');
+    cy.get(
+      '#default-query-0-querystring > div > div:nth-child(2) > div > div:nth-child(1) > div.field > div > div.react-select__control',
+    ).type('Event{enter}');
 
     cy.get('#toolbar-save').click();
 
@@ -46,26 +49,26 @@ describe('Blocks Tests', () => {
     cy.get('.calendar-wrapper .ui.dimmer').should('not.exist');
     cy.get('.fc-daygrid-event-harness').should('not.be.empty');
     cy.get('.block.listing.fullcalendar').contains('My event');
-  })
+  });
 
   it('add FullCalendar block (empty)', () => {
     let pageTitle = 'Empty FullCalender';
 
     // Change page title
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block')
+    cy.get('.documentFirstHeading')
       .clear()
       .type(pageTitle)
-      .get('.documentFirstHeading span[data-text]')
+      .get('.documentFirstHeading > span > span > span')
       .contains(pageTitle);
 
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block').type(
-      '{enter}',
-    );
+    cy.get('.documentFirstHeading').type('{enter}');
 
     // Add fullcalendar block
     cy.get('.ui.basic.icon.button.block-add-button').first().click();
     cy.get('.blocks-chooser .title').contains('Common').click();
-    cy.get('.ui.basic.icon.button.fullcalendar').contains('FullCalendar').click();
+    cy.get('.ui.basic.icon.button.fullcalendar')
+      .contains('FullCalendar')
+      .click();
     cy.get('.fc-today-button').contains('Today');
 
     cy.get('.calendar-wrapper .ui.loader').should('not.exist');
@@ -88,28 +91,26 @@ describe('Blocks Tests', () => {
     let pageTitle = 'FullCalendar with events';
 
     // Change page title
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block')
+    cy.get('.documentFirstHeading')
       .clear()
       .type(pageTitle)
-      .get('.documentFirstHeading span[data-text]')
+      .get('.documentFirstHeading > span > span > span')
       .contains(pageTitle);
 
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block').type(
-      '{enter}',
-    );
+    cy.get('.documentFirstHeading').type('{enter}');
 
     // Add fullcalendar block
     cy.get('.ui.basic.icon.button.block-add-button').first().click();
     cy.get('.blocks-chooser .title').contains('Common').click();
-    cy.get('.ui.basic.icon.button.fullcalendar').contains('FullCalendar').click();
+    cy.get('.ui.basic.icon.button.fullcalendar')
+      .contains('FullCalendar')
+      .click();
     cy.get('.fc-today-button').contains('Today');
     cy.get('.fc-daygrid-event-harness').should('not.exist');
 
     // Add URL
-    let testURL = 'https://events.uni-koblenz-landau.de/?source=Veranstaltungskalender-KO';
-    cy.get("#field-calendar_url")
-      .invoke('val', testURL)
-      .type(' {enter}');
+    let testURL = 'https://events.uni-koblenz.de/?format=ics&from=today';
+    cy.get('#field-calendar_url').invoke('val', testURL).type(' {enter}');
 
     cy.get('.calendar-wrapper .ui.dimmer').should('be.visible');
     cy.get('.calendar-wrapper .ui.dimmer').should('not.exist');
