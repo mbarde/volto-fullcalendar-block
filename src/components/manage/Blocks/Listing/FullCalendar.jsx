@@ -72,6 +72,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
     })
     .map((i) => {
       return {
+        ...i,
         title: i.title,
         start: i.start,
         end: i.end || false,
