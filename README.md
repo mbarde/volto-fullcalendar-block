@@ -4,12 +4,11 @@ Block for [Volto](https://github.com/plone/volto) to display events from an iCal
 
 ## Features
 
-
-### Listing block variation for Plone events
+### Listing block variation for Event-ish content-types
 
 https://user-images.githubusercontent.com/4497578/154287664-6153ae22-27dd-48ed-984a-93817ef70431.mp4
 
-* Display events within a listing block as calendar
+* Display content-types with behavior `plone.eventbasic` within a listing block as calendar (for customization see below)
 * In order to display recurrent events, you need to add a catalog index and metadata column:
 
 ```XML
@@ -22,7 +21,6 @@ https://user-images.githubusercontent.com/4497578/154287664-6153ae22-27dd-48ed-9
 </object>
 ```
 More details checkout the following link: https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/catalog-indexing-strategies.html#adding-new-indexes-and-metadata-columns
-
 
 ### Calendar block for remote events
 
@@ -86,6 +84,59 @@ export default function applyConfig(config) {
   return config;
 }
 ```
+
+### Customize listing block variation
+
+Only items which have an attribute `start` will translate into calendar entries. (You can enable the behavior `plone.eventbasic` if you want this for your custom content-type.)
+
+If you need to perform some data transformation before passing the listing items into the FullCalendar, you can build a wrapper around the listing component of this addon, like that:
+
+1. Adapt `tsconfig.js`:
+
+```Javascript
+{
+  "compilerOptions": {
+    "paths": {
+      "@mbarde/volto-fullcalendar-block-original": [
+        "../node_modules/@mbarde/volto-fullcalendar-block/src"
+      ]
+    }
+}
+```
+
+2. Create `src/customizations/@mbarde/volto-fullcalendar-block/components/manage/Blocks/Listing/FullCalendar.jsx` (see https://training.plone.org/mastering-plone/volto_overrides.html#component-shadowing)
+
+```Javascript
+/* EXAMPLE Wrapper around the original component to transform offers into events.
+   (One offer can have multiple dates.)   
+*/
+// eslint-disable-next-line import/no-unresolved
+import FullCalendarListingOrig from '@mbarde/volto-fullcalendar-block-original/components/manage/Blocks/Listing/FullCalendar';
+
+const FullCalendarListing = ({ items, ...props }) => {
+  const allEvents = items.flatMap((item) => {
+    if (item['@type'] !== 'Offer') return item;
+    let itemEvents = item.offer_dates.items
+      .filter((od) => od.start && od.end)
+      .map((od) => {
+        return {
+          '@id': item['@id'],
+          title: item.title,
+          description: item.description,
+          start: od.start,
+          end: od.end,
+        };
+      });
+    return itemEvents;
+  });
+  return <FullCalendarListingOrig items={allEvents} {...props} />;
+};
+
+export default FullCalendarListing;
+
+```
+
+(Wrapper imports the original component and passes the transformed items array as property to it.)
 
 ## Setup
 
