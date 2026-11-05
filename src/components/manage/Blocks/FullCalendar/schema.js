@@ -14,7 +14,7 @@ const getViewChoices = (intl) => {
 const getToolbarChoices = (intl) => {
   return getViewChoices(intl).concat([
     ['next', intl.formatMessage(messages.labelNext)],
-    ['prev', intl.formatMessage(messages.lebelPrev)],
+    ['prev', intl.formatMessage(messages.labelPrev)],
     ['today', intl.formatMessage(messages.labelToday)],
     ['title', intl.formatMessage(messages.labelTitle)],
   ]);

@@ -1,6 +1,6 @@
 {
   "name": "@mbarde/volto-fullcalendar-block",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Matthias Barde",
   "description": "volto-fullcalendar-block: Volto add-on",
   "main": "src/index.js",
@@ -32,5 +32,8 @@
   "devDependencies": {
     "@plone/scripts": "^3.0.0",
     "cypress": "13.12.0"
+  },
+  "peerDependencies": {
+    "@plone/volto": ">=17.0.0 || >=18.0.0-alpha.0 || >=19.0.0-alpha.0"
   }
 }

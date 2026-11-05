@@ -45,7 +45,7 @@ const messages = defineMessages({
     id: 'Next',
     defaultMessage: 'Next',
   },
-  lebelPrev: {
+  labelPrev: {
     id: 'Previous',
     defaultMessage: 'Previous',
   },
