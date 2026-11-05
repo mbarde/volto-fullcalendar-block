@@ -39,9 +39,9 @@ const FullCalendarBlockView = (props) => {
   const remoteEvents =
     data.calendar_url && isValidURL(data.calendar_url)
       ? {
-        url: data.calendar_url,
-        format: 'ics',
-      }
+          url: data.calendar_url,
+          format: 'ics',
+        }
       : {};
 
   const calendarRef = useRef(null);
@@ -202,7 +202,10 @@ const FullCalendarBlockView = (props) => {
         const isScrollerTable = table.closest('.fc-scroller') !== null;
         const isScrollgrid = table.classList.contains('fc-scrollgrid');
 
-        if (maxCells <= 1 || (maxCells > 0 && (isScrollerTable || isScrollgrid) && rows.length > 0)) {
+        if (
+          maxCells <= 1 ||
+          (maxCells > 0 && (isScrollerTable || isScrollgrid) && rows.length > 0)
+        ) {
           // If it's single column, we definitely want it as a list
           // If it's a scroller/scrollgrid table and only has one column in this specific instance
           if (maxCells <= 1) {
@@ -228,10 +231,12 @@ const FullCalendarBlockView = (props) => {
       scrollGrids.forEach((grid) => {
         // If the scrollgrid itself is being flagged as redundant (one main column of content)
         // verify its structure.
-        const topLevelRows = grid.querySelectorAll(':scope > tbody > tr, :scope > thead > tr');
+        const topLevelRows = grid.querySelectorAll(
+          ':scope > tbody > tr, :scope > thead > tr',
+        );
         if (topLevelRows.length > 0) {
           let isSingleColGrid = true;
-          topLevelRows.forEach(row => {
+          topLevelRows.forEach((row) => {
             if (row.querySelectorAll(':scope > td, :scope > th').length > 1) {
               isSingleColGrid = false;
             }
@@ -239,7 +244,7 @@ const FullCalendarBlockView = (props) => {
 
           if (isSingleColGrid) {
             grid.setAttribute('role', 'list');
-            topLevelRows.forEach(row => {
+            topLevelRows.forEach((row) => {
               row.setAttribute('role', 'listitem');
               const cell = row.querySelector(':scope > td, :scope > th');
               if (cell) cell.setAttribute('role', 'presentation');
@@ -264,7 +269,7 @@ const FullCalendarBlockView = (props) => {
         {storedEvents === null && (
           <>
             <Dimmer active inverted>
-              <Loader inverted size='massive' />
+              <Loader inverted size="massive" />
             </Dimmer>
             <FullCalendar
               ref={calendarRef}

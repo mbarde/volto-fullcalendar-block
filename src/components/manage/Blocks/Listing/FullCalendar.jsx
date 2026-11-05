@@ -224,7 +224,10 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
         const isScrollerTable = table.closest('.fc-scroller') !== null;
         const isScrollgrid = table.classList.contains('fc-scrollgrid');
 
-        if (maxCells <= 1 || (maxCells > 0 && (isScrollerTable || isScrollgrid) && rows.length > 0)) {
+        if (
+          maxCells <= 1 ||
+          (maxCells > 0 && (isScrollerTable || isScrollgrid) && rows.length > 0)
+        ) {
           if (maxCells <= 1) {
             table.setAttribute('role', 'list');
             table.removeAttribute('aria-labelledby');
@@ -245,10 +248,12 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
       // Special handling for the main scrollgrid if it's being problematic
       const scrollGrids = calendarEl.querySelectorAll('.fc-scrollgrid');
       scrollGrids.forEach((grid) => {
-        const topLevelRows = grid.querySelectorAll(':scope > tbody > tr, :scope > thead > tr');
+        const topLevelRows = grid.querySelectorAll(
+          ':scope > tbody > tr, :scope > thead > tr',
+        );
         if (topLevelRows.length > 0) {
           let isSingleColGrid = true;
-          topLevelRows.forEach(row => {
+          topLevelRows.forEach((row) => {
             if (row.querySelectorAll(':scope > td, :scope > th').length > 1) {
               isSingleColGrid = false;
             }
@@ -256,7 +261,7 @@ const FullCalendarListing = ({ items, moment: momentlib, ...props }) => {
 
           if (isSingleColGrid) {
             grid.setAttribute('role', 'list');
-            topLevelRows.forEach(row => {
+            topLevelRows.forEach((row) => {
               row.setAttribute('role', 'listitem');
               const cell = row.querySelector(':scope > td, :scope > th');
               if (cell) cell.setAttribute('role', 'presentation');
